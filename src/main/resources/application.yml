@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: backend
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: '95684629ff4e2cf7022f064998bc341dd8f6afa9'
+    url: jdbc:mysql://ExpenseManagement_mudhighway:95684629ff4e2cf7022f064998bc341dd8f6afa9@vi5tv.h.filess.io:61002/ExpenseManagement_mudhighway
+    username: ExpenseManagement_mudhighway
+  jpa:
+    hibernate:
+      ddl-auto: update
+server:
+  servlet:
+    contextPath: /api
