@@ -1,8 +1,6 @@
 package com.tigeren.backend.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -23,4 +21,7 @@ public class User extends Base {
     @Column(columnDefinition = "boolean default true")
     private Boolean active;
 
+    @ManyToOne
+    @JoinColumn(name = "role_id")
+    private Role role;
 }

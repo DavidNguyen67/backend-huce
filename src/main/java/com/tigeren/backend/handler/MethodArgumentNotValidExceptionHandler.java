@@ -37,16 +37,16 @@ public class MethodArgumentNotValidExceptionHandler {
     }
 
     static class Error {
-        private final int status;
+        private final Integer status;
         private final String message;
         private final List<FieldError> fieldErrors = new ArrayList<>();
 
-        Error(int status, String message) {
+        Error(Integer status, String message) {
             this.status = status;
             this.message = message;
         }
 
-        public int getStatus() {
+        public Integer getStatus() {
             return status;
         }
 

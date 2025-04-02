@@ -1,9 +1,9 @@
 package com.tigeren.backend.controller;
 
 import com.tigeren.backend.dto.CreateUserDTO;
-import com.tigeren.backend.dto.DeleteUserDTO;
+import com.tigeren.backend.dto.DeleteRecordDTO;
 import com.tigeren.backend.dto.UpdateUserDTO;
-import com.tigeren.backend.entity.User;
+import com.tigeren.backend.dto.UserDTO;
 import com.tigeren.backend.service.UserService;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
@@ -26,34 +26,34 @@ public class UserController {
     }
 
     @PostMapping
-    public ResponseEntity<User> createUser(@Valid @RequestBody CreateUserDTO createUserDTO) {
-        User createdUser = userService.createUser(createUserDTO);
+    public ResponseEntity<UserDTO> createUser(@Valid @RequestBody CreateUserDTO createUserDTO) {
+        UserDTO createdUser = userService.createUser(createUserDTO);
         return new ResponseEntity<>(createdUser, HttpStatus.CREATED);
     }
 
     @GetMapping
-    public ResponseEntity<User> getUserById(@RequestParam("id") String userId) {
-        Optional<User> user = userService.getUserById(userId);
-        return user.map(ResponseEntity::ok)
+    public ResponseEntity<UserDTO> getUserById(@RequestParam("id") String userId) {
+        Optional<UserDTO> userDTO = userService.getUserById(userId);
+        return userDTO.map(ResponseEntity::ok)
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<User>> getAllUsers(
-            @RequestParam(defaultValue = "10") int pageSize,
-            @RequestParam(defaultValue = "0") int pageNumber,
+    public ResponseEntity<List<UserDTO>> getAllUsers(
+            @RequestParam(defaultValue = "10") Integer pageSize,
+            @RequestParam(defaultValue = "0") Integer pageNumber,
             @RequestParam(defaultValue = "") String keyword,
             @RequestParam(defaultValue = "insertedAt") String sortField,
             @RequestParam(defaultValue = "ASC") String sortOrder) {
-        
-        List<User> users = userService.getAllUsers(pageSize, pageNumber, keyword, sortField, sortOrder);
-        return new ResponseEntity<>(users, HttpStatus.OK);
+
+        List<UserDTO> usersDTO = userService.getAllUsers(pageSize, pageNumber, keyword, sortField, sortOrder);
+        return new ResponseEntity<>(usersDTO, HttpStatus.OK);
     }
 
     @PutMapping
-    public ResponseEntity<User> updateUser(@Valid @RequestBody UpdateUserDTO updateUserDTO) {
+    public ResponseEntity<UserDTO> updateUser(@Valid @RequestBody UpdateUserDTO updateUserDTO) {
         try {
-            User updatedUser = userService.updateUser(updateUserDTO);
+            UserDTO updatedUser = userService.updateUser(updateUserDTO);
             return new ResponseEntity<>(updatedUser, HttpStatus.OK);
         } catch (ResponseStatusException e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -61,8 +61,8 @@ public class UserController {
     }
 
     @DeleteMapping
-    public ResponseEntity<Void> deleteUser(@Valid @RequestBody DeleteUserDTO deleteUserDTO) {
-        userService.deleteUser(deleteUserDTO);
+    public ResponseEntity<Void> deleteUser(@Valid @RequestBody DeleteRecordDTO deleteRecordDTO) {
+        userService.deleteUsers(deleteRecordDTO);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }

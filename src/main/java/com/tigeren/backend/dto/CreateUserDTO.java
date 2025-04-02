@@ -19,4 +19,7 @@ public class CreateUserDTO {
     private String lastName;
 
     private Boolean active;
+
+    @NotBlank(message = "{role_id_required}")
+    private String roleId;
 }

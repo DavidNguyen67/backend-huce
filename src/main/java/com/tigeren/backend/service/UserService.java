@@ -1,9 +1,13 @@
 package com.tigeren.backend.service;
 
 import com.tigeren.backend.dto.CreateUserDTO;
-import com.tigeren.backend.dto.DeleteUserDTO;
+import com.tigeren.backend.dto.DeleteRecordDTO;
 import com.tigeren.backend.dto.UpdateUserDTO;
+import com.tigeren.backend.dto.UserDTO;
+import com.tigeren.backend.entity.Role;
 import com.tigeren.backend.entity.User;
+import com.tigeren.backend.helper.ObjectMapperHelper;
+import com.tigeren.backend.repository.RoleRepository;
 import com.tigeren.backend.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.PageRequest;
@@ -22,34 +26,39 @@ import java.util.UUID;
 @Slf4j
 public class UserService {
     private final UserRepository userRepository;
+    private final RoleRepository roleRepository;
 
-    public UserService(UserRepository userRepository) {
+    public UserService(UserRepository userRepository, RoleRepository roleRepository) {
         this.userRepository = userRepository;
+        this.roleRepository = roleRepository;
     }
 
-    public Optional<User> getUserById(String id) {
+    public Optional<UserDTO> getUserById(String id) {
         Optional<User> user = userRepository.findById(id);
 
         if (user.isEmpty()) {
-//            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found with id " + id);
             log.error("User not found with id {}", id);
         }
-        return user;
+        return Optional.ofNullable(ObjectMapperHelper.map(user, UserDTO.class));
     }
 
-    public List<User> getAllUsers(int pageSize, int pageNumber, String keyword, String sortField, String sortOrder) {
+    public List<UserDTO> getAllUsers(Integer pageSize, Integer pageNumber, String keyword, String sortField, String sortOrder) {
         Sort.Direction direction = Sort.Direction.fromString(sortOrder);
         Pageable pageable = PageRequest.of(pageNumber, pageSize, Sort.by(direction, sortField));
 
+        List<User> users;
+
         if (keyword.isEmpty()) {
-            return userRepository.findAll(pageable).getContent();
+            users = userRepository.findAll(pageable).getContent();
         } else {
-            return userRepository.findByKeyword(keyword, pageable);
+            users = userRepository.findByKeyword(keyword, pageable);
         }
+
+        return ObjectMapperHelper.mapAll(users, UserDTO.class);
     }
 
     @Transactional(rollbackFor = {Exception.class, RuntimeException.class})
-    public User createUser(CreateUserDTO createUserDTO) {
+    public UserDTO createUser(CreateUserDTO createUserDTO) {
         User user = new User();
 
         user.setId(UUID.randomUUID().toString());
@@ -58,11 +67,16 @@ public class UserService {
         user.setLastName(createUserDTO.getLastName());
         user.setActive(createUserDTO.getActive());
 
-        return userRepository.save(user);
+        Role role = roleRepository.findById(createUserDTO.getRoleId())
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid role ID"));
+
+        user.setRole(role);
+        User createdUser = userRepository.save(user);
+        return ObjectMapperHelper.map(createdUser, UserDTO.class);
     }
 
     @Transactional(rollbackFor = {Exception.class, RuntimeException.class})
-    public User updateUser(UpdateUserDTO updateUserDTO) {
+    public UserDTO updateUser(UpdateUserDTO updateUserDTO) {
         String userId = updateUserDTO.getId();
 
         return userRepository.findById(userId).map(user -> {
@@ -70,13 +84,21 @@ public class UserService {
             user.setFirstName(updateUserDTO.getFirstName());
             user.setLastName(updateUserDTO.getLastName());
             user.setActive(updateUserDTO.getActive());
-            return userRepository.save(user);
+
+            Role role = roleRepository.findById(updateUserDTO.getRoleId())
+                    .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid role ID"));
+
+            user.setRole(role);
+
+            User updatedUser = userRepository.save(user);
+            return ObjectMapperHelper.map(updatedUser, UserDTO.class);
+
         }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found with id " + userId));
     }
 
     @Transactional(rollbackFor = {Exception.class, RuntimeException.class})
-    public void deleteUser(DeleteUserDTO deleteUserDTO) {
-        List<String> ids = deleteUserDTO.getIds();
+    public void deleteUsers(DeleteRecordDTO deleteRecordDTO) {
+        List<String> ids = deleteRecordDTO.getIds();
         userRepository.deleteAllById(ids);
     }
 }

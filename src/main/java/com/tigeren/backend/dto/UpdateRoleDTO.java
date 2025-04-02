@@ -6,8 +6,7 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class UpdateUserDTO extends CreateUserDTO {
-    @NotNull(message = "{user_id_required}")
+public class UpdateRoleDTO extends CreateRoleDTO {
+    @NotNull(message = "{role_id_required}")
     private String id;
-
 }
