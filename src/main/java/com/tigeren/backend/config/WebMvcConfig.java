@@ -12,6 +12,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 @EnableScheduling
 public class WebMvcConfig implements WebMvcConfigurer {
+
+
     @Bean
     public ModelMapper modelMapperBean() {
         return new ModelMapper();

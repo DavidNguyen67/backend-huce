@@ -12,6 +12,9 @@ public class User extends Base {
     @Column(unique = true)
     private String email;
 
+    @Column
+    private String password;
+
     @Column(name = "first_name", nullable = false)
     private String firstName;
 
