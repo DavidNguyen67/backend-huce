@@ -1,0 +1,1038 @@
+{
+	"info": {
+		"_postman_id": "feb40b07-636b-4c96-8722-6dcbae832c96",
+		"name": "SpringBoot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29084054",
+		"_collection_link": "https://con-ch-ch.postman.co/workspace/T%E1%BB%B1-h%E1%BB%8Dc-%E1%BB%9F-nh%C3%A0~8b2faa33-f69d-43f4-8d12-d0d2ed21a339/collection/29084054-feb40b07-636b-4c96-8722-6dcbae832c96?action=share&source=collection_link&creator=29084054"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"lastName\": \"test\",\r\n\t\"firstName\": \"test 1\",\r\n\t\"email\": \"test1@gmail.com\",\r\n\t\"roleId\": \"0897e1ec-8708-4ec5-8a52-e9ede32aee4f\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/users",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"lastName\": \"Nguyễn\",\r\n\t\"firstName\": \"Quân\",\r\n\t\"email\": \"quan@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/users",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 02 Apr 2025 14:25:49 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"0fd7b87d-29db-4f93-b48e-74c5b6b0ef88\",\n    \"insertedAt\": \"2025-04-02T14:25:48.297+00:00\",\n    \"updatedAt\": \"2025-04-02T14:25:48.297+00:00\",\n    \"deletedAt\": null,\n    \"email\": \"quan@gmail.com\",\n    \"firstName\": \"Quân\",\n    \"lastName\": \"Nguyễn\",\n    \"active\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Update user",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"lastName\": \"Nguyễn\",\r\n\t\"firstName\": \"Quân\",\r\n\t\"email\": \"ahihi@gmail.com\",\r\n\t\"id\": \"cdeeb51a-3008-4504-a848-b10209683a9e\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/users",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update user",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"lastName\": \"Nguyễn\",\r\n\t\"firstName\": \"Quân\",\r\n\t\"email\": \"ahihi@gmail.com\",\r\n\t\"id\": \"cdeeb51a-3008-4504-a848-b10209683a9e\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/users",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 02 Apr 2025 14:25:21 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"cdeeb51a-3008-4504-a848-b10209683a9e\",\n    \"insertedAt\": \"2025-04-02T13:52:44.000+00:00\",\n    \"updatedAt\": \"2025-04-02T14:25:20.762+00:00\",\n    \"deletedAt\": null,\n    \"email\": \"ahihi@gmail.com\",\n    \"firstName\": \"Quân\",\n    \"lastName\": \"Nguyễn\",\n    \"active\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Get user by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/users?id=cdeeb51a-3008-4504-a848-b10209683a9e",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "cdeeb51a-3008-4504-a848-b10209683a9e"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get user by id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/users?id=cdeeb51a-3008-4504-a848-b10209683a9e",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "cdeeb51a-3008-4504-a848-b10209683a9e"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 02 Apr 2025 14:26:07 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"cdeeb51a-3008-4504-a848-b10209683a9e\",\n    \"insertedAt\": \"2025-04-02T13:52:44.000+00:00\",\n    \"updatedAt\": \"2025-04-02T14:25:21.000+00:00\",\n    \"deletedAt\": null,\n    \"email\": \"ahihi@gmail.com\",\n    \"firstName\": \"Quân\",\n    \"lastName\": \"Nguyễn\",\n    \"active\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Get users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/users/all",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"all"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "1",
+									"description": "@RequestParam(defaultValue = \"10\") int pageSize",
+									"disabled": true
+								},
+								{
+									"key": "pageNumber",
+									"value": "1",
+									"description": "@RequestParam(defaultValue = \"0\") int pageNumber",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": null,
+									"description": "@RequestParam(defaultValue = \"\") String keyword",
+									"disabled": true
+								},
+								{
+									"key": "sortField",
+									"value": "email",
+									"description": "@RequestParam(defaultValue = \"insertedAt\") String sortField",
+									"disabled": true
+								},
+								{
+									"key": "sortOrder",
+									"value": "ASC",
+									"description": "@RequestParam(defaultValue = \"ASC\") String sortOrder | \"DESC\"",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get users",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/users/all?sortOrder=ASC",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"all"
+									],
+									"query": [
+										{
+											"key": "pageSize",
+											"value": "1",
+											"description": "@RequestParam(defaultValue = \"10\") int pageSize",
+											"disabled": true
+										},
+										{
+											"key": "pageNumber",
+											"value": "1",
+											"description": "@RequestParam(defaultValue = \"0\") int pageNumber",
+											"disabled": true
+										},
+										{
+											"key": "keyword",
+											"value": null,
+											"description": "@RequestParam(defaultValue = \"\") String keyword",
+											"disabled": true
+										},
+										{
+											"key": "sortField",
+											"value": "email",
+											"description": "@RequestParam(defaultValue = \"insertedAt\") String sortField",
+											"disabled": true
+										},
+										{
+											"key": "sortOrder",
+											"value": "ASC",
+											"description": "@RequestParam(defaultValue = \"ASC\") String sortOrder | \"DESC\""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 02 Apr 2025 14:28:21 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"cdeeb51a-3008-4504-a848-b10209683a9e\",\n        \"insertedAt\": \"2025-04-02T13:52:44.000+00:00\",\n        \"updatedAt\": \"2025-04-02T14:25:21.000+00:00\",\n        \"deletedAt\": null,\n        \"email\": \"ahihi@gmail.com\",\n        \"firstName\": \"Quân\",\n        \"lastName\": \"Nguyễn\",\n        \"active\": null\n    },\n    {\n        \"id\": \"87b3c8a9-8c78-4cbb-a648-606bd3686e59\",\n        \"insertedAt\": \"2025-04-02T13:53:41.000+00:00\",\n        \"updatedAt\": \"2025-04-02T13:53:41.000+00:00\",\n        \"deletedAt\": null,\n        \"email\": \"ahihasd@askfhasjdascx.cjashdjhsa\",\n        \"firstName\": \"Quân\",\n        \"lastName\": \"Nguyễn\",\n        \"active\": null\n    },\n    {\n        \"id\": \"0fd7b87d-29db-4f93-b48e-74c5b6b0ef88\",\n        \"insertedAt\": \"2025-04-02T14:25:48.000+00:00\",\n        \"updatedAt\": \"2025-04-02T14:25:48.000+00:00\",\n        \"deletedAt\": null,\n        \"email\": \"quan@gmail.com\",\n        \"firstName\": \"Quân\",\n        \"lastName\": \"Nguyễn\",\n        \"active\": null\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Delete users",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"ids\": [\r\n\t\t\"4e2b0b27-8aec-42d5-816b-b7f09e51803f\"\r\n\t]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/users",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete users",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"ids\": [\r\n\t\t\"4e2b0b27-8aec-42d5-816b-b7f09e51803f\"\r\n\t]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/users",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 02 Apr 2025 14:26:22 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Role",
+			"item": [
+				{
+					"name": "Create role",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"member\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/roles",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"roles"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create role",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"name\": \"admin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/roles",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"roles"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 02 Apr 2025 14:53:35 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"0897e1ec-8708-4ec5-8a52-e9ede32aee4f\",\n    \"insertedAt\": \"2025-04-02T14:53:34.710+00:00\",\n    \"updatedAt\": \"2025-04-02T14:53:34.710+00:00\",\n    \"deletedAt\": null,\n    \"name\": \"admin\",\n    \"users\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Update role",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"admin\",\r\n\t\"id\": \"0897e1ec-8708-4ec5-8a52-e9ede32aee4f\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/roles",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"roles"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update role",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"name\": \"ahihi@gmail.com\",\r\n\t\"id\": \"0897e1ec-8708-4ec5-8a52-e9ede32aee4f\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/roles",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"roles"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 02 Apr 2025 14:54:54 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"0897e1ec-8708-4ec5-8a52-e9ede32aee4f\",\n    \"insertedAt\": \"2025-04-02T14:53:35.000+00:00\",\n    \"updatedAt\": \"2025-04-02T14:54:53.618+00:00\",\n    \"deletedAt\": null,\n    \"name\": \"ahihi@gmail.com\",\n    \"users\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "Get role by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/roles?id=4456a249-8375-4aa5-835c-626ff6ca53a2",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"roles"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "4456a249-8375-4aa5-835c-626ff6ca53a2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get role by id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/roles?id=0897e1ec-8708-4ec5-8a52-e9ede32aee4f",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"roles"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "0897e1ec-8708-4ec5-8a52-e9ede32aee4f"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 02 Apr 2025 14:56:39 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"0897e1ec-8708-4ec5-8a52-e9ede32aee4f\",\n    \"insertedAt\": \"2025-04-02T14:53:35.000+00:00\",\n    \"updatedAt\": \"2025-04-02T14:54:54.000+00:00\",\n    \"deletedAt\": null,\n    \"name\": \"ahihi@gmail.com\",\n    \"users\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "Get roles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/roles/all",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"roles",
+								"all"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "1",
+									"description": "@RequestParam(defaultValue = \"10\") int pageSize",
+									"disabled": true
+								},
+								{
+									"key": "pageNumber",
+									"value": "1",
+									"description": "@RequestParam(defaultValue = \"0\") int pageNumber",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": null,
+									"description": "@RequestParam(defaultValue = \"\") String keyword",
+									"disabled": true
+								},
+								{
+									"key": "sortField",
+									"value": "email",
+									"description": "@RequestParam(defaultValue = \"insertedAt\") String sortField",
+									"disabled": true
+								},
+								{
+									"key": "sortOrder",
+									"value": "ASC",
+									"description": "@RequestParam(defaultValue = \"ASC\") String sortOrder | \"DESC\"",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get roles",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/roles/all",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"roles",
+										"all"
+									],
+									"query": [
+										{
+											"key": "pageSize",
+											"value": "1",
+											"description": "@RequestParam(defaultValue = \"10\") int pageSize",
+											"disabled": true
+										},
+										{
+											"key": "pageNumber",
+											"value": "1",
+											"description": "@RequestParam(defaultValue = \"0\") int pageNumber",
+											"disabled": true
+										},
+										{
+											"key": "keyword",
+											"value": null,
+											"description": "@RequestParam(defaultValue = \"\") String keyword",
+											"disabled": true
+										},
+										{
+											"key": "sortField",
+											"value": "email",
+											"description": "@RequestParam(defaultValue = \"insertedAt\") String sortField",
+											"disabled": true
+										},
+										{
+											"key": "sortOrder",
+											"value": "ASC",
+											"description": "@RequestParam(defaultValue = \"ASC\") String sortOrder | \"DESC\"",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 02 Apr 2025 14:57:27 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"0897e1ec-8708-4ec5-8a52-e9ede32aee4f\",\n        \"insertedAt\": \"2025-04-02T14:53:35.000+00:00\",\n        \"updatedAt\": \"2025-04-02T14:57:14.000+00:00\",\n        \"deletedAt\": null,\n        \"name\": \"admin\",\n        \"users\": []\n    },\n    {\n        \"id\": \"8d13bc37-3ae3-4784-b7f2-e911188a8e82\",\n        \"insertedAt\": \"2025-04-02T14:54:04.000+00:00\",\n        \"updatedAt\": \"2025-04-02T14:54:04.000+00:00\",\n        \"deletedAt\": null,\n        \"name\": \"mod\",\n        \"users\": []\n    },\n    {\n        \"id\": \"91d98c09-e7fb-4951-b492-4c79f276b805\",\n        \"insertedAt\": \"2025-04-02T14:54:10.000+00:00\",\n        \"updatedAt\": \"2025-04-02T14:54:10.000+00:00\",\n        \"deletedAt\": null,\n        \"name\": \"member\",\n        \"users\": []\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Delete roles",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"ids\": [\r\n\t\t\"4456a249-8375-4aa5-835c-626ff6ca53a2\"\r\n\t]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/roles",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"roles"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete roles",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"ids\": [\r\n\t\t\"4456a249-8375-4aa5-835c-626ff6ca53a2\"\r\n\t]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/users",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 02 Apr 2025 15:00:25 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		}
+	]
+}
